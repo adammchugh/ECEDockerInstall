@@ -7,7 +7,8 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker ${USER}
+sudo groupmod -g 1010 foo
 newgrp docker
 sudo sysctl -w vm.max_map_count=262144
 sudo sysctl -p
