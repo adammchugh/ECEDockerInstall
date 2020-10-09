@@ -14,6 +14,7 @@ sudo sysctl -w vm.max_map_count=262144
 sudo sysctl -p
 sudo mkdir /mnt/data
 sudo chown -R 1000:1000 /mnt/data/
-sysctl -w vm.max_map_count=262144
+sudo sysctl -w vm.max_map_count=262144
+echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
 
 echo "bash <(curl -fsSL https://download.elastic.co/cloud/elastic-cloud-enterprise.sh) install --coordinator-host <hostname of first host> --roles-token 'TOKEN'"
