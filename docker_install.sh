@@ -8,13 +8,12 @@ sudo apt-get update -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
-sudo groupmod -g 1010 foo
+sudo groupmod -g 1010 docker
 newgrp docker
+echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -w vm.max_map_count=262144
 sudo sysctl -p
 sudo mkdir /mnt/data
 sudo chown -R 1000:1000 /mnt/data/
-sudo sysctl -w vm.max_map_count=262144
-echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
 
 echo "bash <(curl -fsSL https://download.elastic.co/cloud/elastic-cloud-enterprise.sh) install --coordinator-host <hostname of first host> --roles-token 'TOKEN'"
