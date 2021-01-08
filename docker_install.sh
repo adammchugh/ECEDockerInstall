@@ -16,6 +16,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -w vm.max_map_count=262144
 
+sudo usermod -aG docker $USER
+
 sudo mkdir /mnt/data
 sudo chown 1000:1000 /mnt/data/
 
