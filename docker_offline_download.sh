@@ -32,3 +32,5 @@ docker save -o apm.7.11.1-0.tar docker.elastic.co/cloud-assets/apm:7.11.1-0
 docker save -o enterprise-search.7.11.1.tar docker.elastic.co/enterprise-search/enterprise-search:7.11.1
 docker save -o es.6.8.14-0.tar docker.elastic.co/cloud-assets/elasticsearch:6.8.14-0
 docker save -o kibana.6.8.14-0.tar docker.elastic.co/cloud-assets/kibana:6.8.14-0
+
+curl -L -O https://download.elastic.co/cloud/elastic-cloud-enterprise.sh
